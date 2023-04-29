@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "credit_card_brands",
+  "info": {
+    "singularName": "credit-card-brand",
+    "pluralName": "credit-card-brands",
+    "displayName": "CreditCardBrand",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Description": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Logo": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

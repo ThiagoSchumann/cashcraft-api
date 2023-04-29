@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "credit_card_invoice_transactions",
+  "info": {
+    "singularName": "credit-card-invoice-transaction",
+    "pluralName": "credit-card-invoice-transactions",
+    "displayName": "CreditCardInvoiceTransaction"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Description": {
+      "type": "string",
+      "required": true
+    },
+    "Value": {
+      "type": "float",
+      "default": 0,
+      "min": 0,
+      "required": true
+    },
+    "Date": {
+      "type": "date",
+      "required": true
+    },
+    "Observation": {
+      "type": "richtext"
+    },
+    "IgnoredTransaction": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "RecurringExpense": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "CreditCard": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::credit-card.credit-card"
+    },
+    "CreditCardInvoice": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::credit-card-invoice.credit-card-invoice"
+    }
+  }
+}

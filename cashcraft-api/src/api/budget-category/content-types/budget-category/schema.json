@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "budget_categories",
+  "info": {
+    "singularName": "budget-category",
+    "pluralName": "budget-categories",
+    "displayName": "BudgetCategory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Budget": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::budget.budget"
+    },
+    "Category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "Value": {
+      "type": "float",
+      "required": true,
+      "min": 0
+    }
+  }
+}

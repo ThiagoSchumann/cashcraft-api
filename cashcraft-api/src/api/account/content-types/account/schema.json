@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accounts",
+  "info": {
+    "singularName": "account",
+    "pluralName": "accounts",
+    "displayName": "Account",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Description": {
+      "type": "string",
+      "required": true
+    },
+    "Color": {
+      "type": "string",
+      "required": true
+    },
+    "IncludeOnDashboard": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "AccountType": {
+      "type": "enumeration",
+      "enum": [
+        "Checking account",
+        "Money",
+        "Savings",
+        "Investments",
+        "Other"
+      ],
+      "required": true,
+      "default": "Checking account"
+    },
+    "Bank": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bank.bank"
+    },
+    "Value": {
+      "type": "float",
+      "min": 0,
+      "required": true
+    }
+  }
+}

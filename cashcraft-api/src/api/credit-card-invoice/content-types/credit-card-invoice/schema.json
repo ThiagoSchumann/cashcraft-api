@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "credit_card_invoices",
+  "info": {
+    "singularName": "credit-card-invoice",
+    "pluralName": "credit-card-invoices",
+    "displayName": "CreditCardInvoice",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "BillingMonth": {
+      "type": "enumeration",
+      "enum": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      "required": true
+    },
+    "BillingYear": {
+      "type": "integer",
+      "required": true
+    },
+    "Value": {
+      "type": "float",
+      "required": true,
+      "default": 0,
+      "min": 0
+    },
+    "State": {
+      "type": "enumeration",
+      "enum": [
+        "Paid",
+        "Not Paid"
+      ],
+      "default": "Not Paid",
+      "required": true
+    },
+    "ClosingDate": {
+      "type": "date",
+      "required": true
+    },
+    "DueDate": {
+      "type": "date",
+      "required": true
+    },
+    "CreditCard": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::credit-card.credit-card"
+    }
+  }
+}
