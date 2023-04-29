@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@strapi/plugin-color-picker": "^4.10.1",
+    "strapi-plugin-entity-relationship-chart": "^3.1.0"
+  }
+}
